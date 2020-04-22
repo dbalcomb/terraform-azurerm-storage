@@ -13,3 +13,11 @@ module "storage" {
     storage = "cool"
   }
 }
+
+module "storage_share" {
+  source = "../../modules/share"
+
+  name    = "myshare"
+  quota   = 2000
+  account = module.storage
+}
