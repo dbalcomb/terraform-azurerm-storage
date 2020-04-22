@@ -1,14 +1,15 @@
-# terraform-azurerm-storage
+# Account
 
-Terraform modules for [Azure Storage][storage].
+This module configures an Azure Storage account that can be used to create file
+shares that map to distributed applications.
 
 ## Usage
 
 ```hcl
-module "storage" {
-  source = "github.com/dbalcomb/terraform-azurerm-storage"
+module "storage_account" {
+  source = "github.com/dbalcomb/terraform-azurerm-storage//modules/account"
 
-  name        = "mystorage"
+  name        = "mystorageaccount"
   group       = "my-storage-rg"
   region      = "uksouth"
   tier        = "Premium"
@@ -52,12 +53,6 @@ module "storage" {
 | `host`        | `string` | The file storage endpoint host  |
 | `keys`        | `array`  | The storage account access keys |
 
-## Modules
-
-- [Account](modules/account/README.md)
-
 ## References
 
-- [Azure Storage Documentation](https://docs.microsoft.com/en-gb/azure/storage/)
-
-[storage]: https://azure.microsoft.com/en-gb/services/storage/
+- [Storage Account Overview](https://docs.microsoft.com/en-gb/azure/storage/common/storage-account-overview)
