@@ -55,6 +55,7 @@ module "storage" {
 ## Modules
 
 - [Account](modules/account/README.md)
+- [Share](modules/share/README.md)
 
 ## References
 
